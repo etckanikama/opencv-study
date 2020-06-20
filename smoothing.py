@@ -9,6 +9,7 @@ def RotateToAngle(rows,cols,angle):
     return dst
 
 # a×bの画素すべて１？をつくりnumで割って平均をとる関数
+# いうなればぼかし処理
 def MakeFilterImage(a,b,num):
     kernel = np.ones((a,b),np.float32)/num
     dst_k = cv2.filter2D(img,-1,kernel)
@@ -28,7 +29,7 @@ try:
     rotate_x = RotateToAngle(rows,cols,60)
     cv2.imwrite('./tmp8/function.jpg',rotate_x)
 
-    average_img=MakeFilterImage(5,5,25)
+    average_img=MakeFilterImage(10,10,100)
     cv2.imwrite('./tmp9/func_avg.jpg',average_img)
 
 
