@@ -8,8 +8,6 @@ def retain_noise_cansel(img,kernel):
 
 
 
-
-
 try:
     # 画像の読み込み
     img = cv2.imread('./tmp/j.png')
